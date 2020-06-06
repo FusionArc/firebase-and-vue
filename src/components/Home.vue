@@ -1,24 +1,18 @@
 <template>
-  <div class="intro v-card">
-    <h1>Welcome to CatScrapper.com</h1>
-    <h2>Recyclers & processors of retired catalytic convertors</h2>
-    <p>
-      We aim to provide a bespoke <span><em>Cats to Cash</em></span> service for
-      commercial and hobbyist recyclers.<br /><br />
-      For all enthusiasts and please browse out site where you will find current
-      catalytic convertor recyling news.<br /><br />
-      Checkout the realtime precious metal prices
-    </p>
-  </div>
+    <HomeCard />
 </template>
 
 <script>
+import HomeCard from "@/components/HomeCard";
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    HomeCard
+  }
 };
 </script>
 <style scoped>
-.intro {
+/* .intro {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: auto;
@@ -41,5 +35,5 @@ export default {
   padding: 0.5em;
   line-height: 1.4;
   font-size: 1.2em;
-}
+} */
 </style>

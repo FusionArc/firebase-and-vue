@@ -1,24 +1,23 @@
 <template>
   <v-app>
-    <Navbar />
-    <v-content>
-      <v-container>
-        <router-view />
-      </v-container>
-    </v-content>
-    <v-footer app color="primary" dark class="justify-center">
-      <p class="small"><small>&copy; catscrapper.com 2020</small></p>
-    </v-footer>
+    <v-app-bar app><Navbar /></v-app-bar>
+  <v-content>
+    <v-container fluid>
+      <router-view />
+    </v-container>
+  </v-content>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 export default {
   name: "App",
-
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
 };
 </script>

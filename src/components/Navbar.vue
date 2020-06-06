@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app color="primary" dark>
-    <v-toolbar-title>
-      Cat Scrapper
+    <v-toolbar-title icon>
+      <img src="../public/imgh/icons/tinybullions.png" alt="">
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
