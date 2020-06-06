@@ -7,7 +7,7 @@
       </v-container>
     </v-content>
     <v-footer app color="primary" dark class="justify-center">
-      <p class="small"><small>&copy; catscrapper.com 2020</small></p> 
+      <p class="small"><small>&copy; catscrapper.com 2020</small></p>
     </v-footer>
   </v-app>
 </template>
