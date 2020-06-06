@@ -51,8 +51,4 @@ export default {
   }
 };
 </script>
-<style scoped>
-.title{
-  font-family: 'Faster One', cursive;
-}
-</style>
+
