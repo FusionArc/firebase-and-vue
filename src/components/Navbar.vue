@@ -1,21 +1,21 @@
 <template>
   <v-app-bar app color="primary" dark>
     <v-toolbar-title>
-      Vue Firebase Auth
+      Cat Scrapper
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
       <v-btn text v-if="!user" :to="{ name: 'Signup' }">
-        サインアップ
+        Register
       </v-btn>
       <v-btn text v-if="!user" :to="{ name: 'Login' }">
-        ログイン
+        Login
       </v-btn>
       <v-btn text v-if="user">
         {{ user.email }}
       </v-btn>
       <v-btn text v-if="user" @click="logout">
-        ログアウト
+        Logout
       </v-btn>
     </v-toolbar-items>
   </v-app-bar>
@@ -51,3 +51,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.title{
+  font-family: 'Faster One', cursive;
+}
+</style>

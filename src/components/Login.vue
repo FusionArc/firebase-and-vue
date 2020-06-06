@@ -1,19 +1,19 @@
 <template>
   <v-card width="400px" class="mx-auto mt-5">
     <v-card-title>
-      <h1 class="display-1">ログイン</h1>
+      <h1 class="display-1">Login</h1>
     </v-card-title>
     <v-card-text>
       <v-form>
         <v-text-field
           prepend-icon="mdi-email"
           type="email"
-          label="メールアドレス"
+          label="email address"
           v-model="email"
         />
         <v-text-field
           prepend-icon="mdi-lock"
-          label="パスワード"
+          label="password"
           v-model="password"
           v-bind:type="showPassword ? 'text' : 'password'"
           v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -23,7 +23,7 @@
           <p class="red--text">{{ feedback }}</p>
         </div>
         <v-card-actions>
-          <v-btn class="primary" v-on:click="login">ログイン</v-btn>
+          <v-btn class="primary" v-on:click="login">Login</v-btn>
         </v-card-actions>
       </v-form>
     </v-card-text>
@@ -53,10 +53,10 @@ export default {
             this.$router.push({ name: "Home" });
           })
           .catch(() => {
-            this.feedback = "メールアドレスまたはパスワードが正しくありません";
+            this.feedback = "Incorrect email or password";
           });
       } else {
-        this.feedback = "メールアドレスとパスワードを入力してください";
+        this.feedback = "Please enter your email address and password";
       }
     }
   }

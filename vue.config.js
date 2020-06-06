@@ -1,8 +1,8 @@
 module.exports = {
-  transpileDependencies: ["vuetify"],
-  devServer: {
-    watchOptions: {
-      poll: true
+    transpileDependencies: ["vuetify"],
+    devServer: {
+        watchOptions: {
+            poll: true
+        }
     }
-  }
 };
