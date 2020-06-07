@@ -1,31 +1,39 @@
+/* eslint-disable */
 <template>
-<v-card class="v-flex intro">
-  <div class="heading">
-    <v-card-title>
-      <h1>Welcome to CatScrapper.com</h1>
-    </v-card-title>
-    <v-card-subtitle>
-      <h2>Recyclers & processors of retired catalytic convertors</h2>
-    </v-card-subtitle>
-  </div>
-    <v-card-text>
-      <p>
-        We aim to provide a bespoke <span><em>Cats to Cash</em></span> service for
-        commercial and hobbyist recyclers<br /><br />
-        For all enthusiasts and please browse out site where you will find current
-        catalytic convertor recyling news.<br /><br />
-        Checkout the realtime precious metal prices
-      </p>
-    </v-card-text>
-</v-card> 
+  <v-card class="v-flex intro">
+    <div class="heading">
+      <v-card-title>
+        <h1>Welcome to CatScrapper.com</h1>
+      </v-card-title>
+      <v-card-subtitle>
+        <h2>Recyclers & processors of retired catalytic convertors</h2>
+      </v-card-subtitle>
+    </div>
+    <div class="card-body">
+      <v-card-text>
+        <p>
+          We aim to provide a bespoke <span><em>Cats to Cash</em></span> service
+          for commercial & hobbyist recyclers<br /><br />
+          For all enthusiasts and collectors please browse out site where you
+          will find current catalytic convertor recyling news.<br /><br />
+          Checkout the realtime precious metal prices
+        </p>
+      </v-card-text>
+    </div>
+    <v-img><Chart1 /></v-img>
+  </v-card>
 </template>
 <script>
+import Chart1 from "@/components/Chart1";
 export default {
-  name: "HomeCard"
+  name: "HomeCard",
+  components: {
+    Chart1
+  }
 };
 </script>
 <style scoped>
-.heading{
+.heading {
   background-color: burlywood;
 }
 .intro {
@@ -44,10 +52,24 @@ export default {
 .intro p {
   font-family: serif;
   font-weight: 500;
-  color: black;
+  color: rgb(5, 63, 63);
   text-align: center;
   padding: 0.5em;
   line-height: 1.5;
   font-size: 1.75em;
+}
+.card-body {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 0, 0.5),
+      rgba(0, 0, 255, 0.5)
+    ),
+    url(../../public/img/icons/bullions.png);
+  background-size: contain;
+  background-position: center;
+}
+.card-body img {
+  min-width: 4em;
+  justify-self: center;
 }
 </style>

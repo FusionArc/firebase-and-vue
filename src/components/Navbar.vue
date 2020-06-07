@@ -1,8 +1,7 @@
 <template>
   <v-app-bar app color="primary" dark>
-    <v-toolbar-title icon>
-      <img src="../public/imgh/icons/tinybullions.png" alt="">
-    </v-toolbar-title>
+    <v-toolbar-title> </v-toolbar-title>
+
     <v-spacer></v-spacer>
     <v-toolbar-items>
       <v-btn text v-if="!user" :to="{ name: 'Signup' }">

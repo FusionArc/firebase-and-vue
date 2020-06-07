@@ -1,7 +1,6 @@
 <template>
-    <HomeCard />
+  <HomeCard />
 </template>
-
 <script>
 import HomeCard from "@/components/HomeCard";
 export default {

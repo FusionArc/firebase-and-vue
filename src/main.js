@@ -5,6 +5,7 @@ import vuetify from "./plugins/vuetify";
 import firebase from "firebase";
 import firebaseConfig from "./firebase/init";
 import "./registerServiceWorker";
+import store from "./store";
 
 Vue.config.productionTip = false;
 
@@ -17,6 +18,7 @@ firebase.auth().onAuthStateChanged(() => {
     app = new Vue({
       router,
       vuetify,
+      store,
       render: h => h(App)
     }).$mount("#app");
   }
