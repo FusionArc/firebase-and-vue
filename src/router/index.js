@@ -7,45 +7,44 @@ import firebase from "firebase";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-    meta: {
-      requiresAuth: true
+const routes = [{
+        path: "/",
+        name: "Home",
+        component: Home,
+        meta: {
+            requiresAuth: false
+        }
+    },
+    {
+        path: "/signup",
+        name: "Signup",
+        component: Signup
+    },
+    {
+        path: "/login",
+        name: "Login",
+        component: Login
     }
-  },
-  {
-    path: "/signup",
-    name: "Signup",
-    component: Signup
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: Login
-  }
 ];
 
 const router = new VueRouter({
-  mode: "history",
-  routes
+    mode: "history",
+    routes
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(rec => rec.meta.requiresAuth)) {
-    let user = firebase.auth().currentUser;
-    if (user) {
-      next();
+    if (to.matched.some(rec => rec.meta.requiresAuth)) {
+        let user = firebase.auth().currentUser;
+        if (user) {
+            next();
+        } else {
+            next({
+                name: "Login"
+            });
+        }
     } else {
-      next({
-        name: "Login"
-      });
+        next();
     }
-  } else {
-    next();
-  }
 });
 
 export default router;
