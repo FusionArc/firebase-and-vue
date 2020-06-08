@@ -4,7 +4,7 @@ import Home from "@/components/Home";
 import Signup from "@/components/Signup";
 import Login from "@/components/Login";
 import firebase from "firebase";
-
+/* eslint-disable */
 Vue.use(VueRouter);
 
 const routes = [{
