@@ -22,6 +22,11 @@
         <div v-if="feedback" class="text-center">
           <p class="red--text">{{ feedback }}</p>
         </div>
+        <v-text-field
+          prepend-icon="mdi-verified"
+          label="verify password"
+          v-model="password"
+        />
         <v-card-actions>
           <v-btn class="primary" v-on:click="signup">Register</v-btn>
         </v-card-actions>

@@ -4,6 +4,9 @@
 
     <v-spacer></v-spacer>
     <v-toolbar-items>
+      <v-btn text v-if="!user" @click="google">
+        Login with Google
+      </v-btn>
       <v-btn text v-if="!user" :to="{ name: 'Signup' }">
         Register
       </v-btn>
@@ -44,7 +47,16 @@ export default {
         .auth()
         .signOut()
         .then(() => {
-          this.$router.push({ name: "Login" });
+          this.$router.push({ name: "Home" });
+        });
+    },
+    google() {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(() => {
+          this.$router.push({ name: "Home" });
         });
     }
   }
