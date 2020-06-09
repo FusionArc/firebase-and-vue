@@ -9,11 +9,11 @@
           Recovery & Refining
         </h2>
       </v-card-title>
-      <v-card-subtitle> </v-card-subtitle>
     </div>
     <div class="card-body">
       <v-card-text>
         <h2>Recyclers & processors of retired catalytic convertors</h2>
+        <br/>
         <p>
           We aim to provide a bespoke <span><em>Cats to Cash</em></span> service
           for commercial & hobbyist recyclers
@@ -78,7 +78,7 @@ h2 {
 .intro p {
   font-family: serif;
   font-weight: 500;
-  color: rgb(5, 63, 63);
+  color:black;
   text-align: center;
   line-height: 1.25;
   font-variant: small-caps;
@@ -95,7 +95,7 @@ h2 {
   background-position: center;
 }
 .card-body {
-  color: rgb(5, 63, 63);
+  color: black;
   padding-bottom: 5em;
 }
 .card-body img {
