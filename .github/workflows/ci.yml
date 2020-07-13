@@ -26,5 +26,10 @@ jobs:
         node-version: ${{ matrix.node_version }}
     - run: 
         npm install
+        npm update
+        npm audit fix
+        npm update
+        npm install
+        npm audit fix
         npm run build
         npx firebase deploy 
