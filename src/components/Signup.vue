@@ -5,15 +5,18 @@
     </v-card-title>
     <v-card-text>
       <v-form>
-        <v-text-field
+        <v-text-field class="email-field"
           prepend-icon="mdi-email"
           type="email"
           label="Enter a valid email"
           v-model="email"
         />
+          <div v-if="feedback" class="text-center">
+            <p class="red--text">{{ feedback }}</p>
+          </div>
         <v-text-field
           prepend-icon="mdi-lock"
-          label="Choose a password"
+          label="Enter a password"
           v-model="password"
           v-bind:type="showPassword ? 'text' : 'password'"
           v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -24,9 +27,15 @@
         </div>
         <v-text-field
           prepend-icon="mdi-verified"
-          label="verify password"
-          v-model="password"
+          label="Verify Password"
+          v-model="password2"
+          v-bind:type="showPassword2 ? 'text' : 'password2'"
+          v-bind:append-icon="showPassword2 ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword2 = !showPassword2"
         />
+        <div v-if="feedback" class="text-center">
+          <p class="red--text">{{ feedback }}</p>
+        </div>
         <v-card-actions>
           <v-btn class="primary" v-on:click="signup">Register</v-btn>
         </v-card-actions>
@@ -43,26 +52,30 @@ export default {
     return {
       email: null,
       password: null,
+      password2: null,
       feedback: null,
-      showPassword: false
+      showPassword: false,
+      showPassword2: false
     };
   },
   methods: {
     signup() {
-      if (this.email && this.password) {
-        this.feedback = null;
-        firebase
-          .auth()
-          .createUserWithEmailAndPassword(this.email, this.password)
-          .then(() => {
-            this.$router.push({ name: "Home" });
-          })
-          .catch(() => {
-            this.feedback = "Incorrect email address or password";
-          });
-      } else {
-        this.feedback = "Please enter your email address and password";
+      if (!this.email) {
+        this.feedback = "Please enter a valid email address";
+        if (this.password.length < 8) {
+          this.feedback = "Password must be 8 characters or greater";
+          if (this.password2 != this.password) {
+            this.feedback = "Passwords do not match, please try again";
+          }
+        }
       }
+      //this.feedback = null;
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          this.$router.push({ name: "Home" });
+        })
     }
   }
 };
