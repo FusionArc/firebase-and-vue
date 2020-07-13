@@ -29,7 +29,8 @@ jobs:
         npm update
         npm audit fix
         npm update
-        npm install
-        npm audit fix
+        npm install npx
+    - run: |
+        npx firebase login
         npm run build
         npx firebase deploy 
